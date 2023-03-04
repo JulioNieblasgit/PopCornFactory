@@ -13,7 +13,8 @@
             android:id="@+id/iv_pelicula"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/bones"/>
+            android:src="@drawable/bones"
+   />
 
         <TextView
             android:id="@+id/tv_titulo"
@@ -24,5 +25,7 @@
             android:gravity="center">
 
         </TextView>
-    </LinearLayout>
+
+</LinearLayout>
+
 </LinearLayout>

@@ -9,8 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.GridView
+import android.widget.ImageView
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.pelicula.view.*
+import java.nio.file.Files.find
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     var adapter: PeliculaAdapter? = null
@@ -24,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter = PeliculaAdapter(this, peliculas)
 
+        var gridview: GridView = findViewById(R.id.gridview)
         gridview.adapter = adapter
     }
 
@@ -63,7 +70,6 @@ class MainActivity : AppCompatActivity() {
             var vista = inflator.inflate(R.layout.pelicula, null)
             vista.iv_pelicula.setImageResource(pelicula.image)
             vista.tv_titulo.setText(pelicula.titulo)
-
             vista.iv_pelicula.setOnClickListener{
                 var intent = Intent(context, DetallePelicula::class.java)
                 intent.putExtra("titulo", pelicula.titulo)
